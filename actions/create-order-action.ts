@@ -32,5 +32,8 @@ export async function createOrder(data: Object) {
         
     } catch (error) {
         console.log(error)
+        return {
+            errors: [{message: 'Hubo un error al agregar el pedido'}]
+        }
     }
 }

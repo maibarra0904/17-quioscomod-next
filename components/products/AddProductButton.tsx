@@ -9,12 +9,6 @@ type AddProductButtonProps = {
     product: Product
 }
 
-type ProductDetailsProps = {
-    item: OrderItem
-}
-
-const MAX_ITEMS = 5
-
 const AddProductButton = ({product}: AddProductButtonProps) => {
     
     const addToOrder = useStore((state) => state.addToOrder)

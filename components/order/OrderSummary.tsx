@@ -8,7 +8,9 @@ import { OrderSchema } from "@/src/schema"
 import { toast } from "react-toastify"
 
 const OrderSummary = () => {
-    const order = useStore((state) => state.order)
+    const {order, deleteAllProducts} = useStore()
+
+
 
     const total = order.map(item => item.subtotal).reduce((a, b) => a + b, 0).toFixed(2)
 
@@ -21,7 +23,7 @@ const OrderSummary = () => {
         }
 
         //Validación del lado del cliente
-        const result = OrderSchema.safeParse(data)
+        //const result = OrderSchema.safeParse(data)
 
         // if(!result.success) {
         //     result.error.issues.forEach((issue) => {
@@ -42,6 +44,7 @@ const OrderSummary = () => {
             return
         }
 
+        deleteAllProducts();
         toast.success('Orden Creada Satisfactoriamente')
     }
 
