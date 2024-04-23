@@ -1,5 +1,6 @@
 "use server"
 
+import { revalidatePath } from "next/cache"
 import { prisma } from "@/src/lib/prisma"
 import { OrderSchema } from "@/src/schema"
 
@@ -36,4 +37,24 @@ export async function createOrder(data: Object) {
             errors: [{message: 'Hubo un error al agregar el pedido'}]
         }
     }
+}
+
+export async function completeOrder(id: number) {
+    try {
+        await prisma.order.update({
+        
+            where: {
+                id
+            },
+            data: {
+                status: true,
+                orderReadyAt: new Date(Date.now())
+            }
+        })
+
+        revalidatePath('/admin/orders')
+    } catch (error) {
+        console.log(error)
+    }
+    
 }
