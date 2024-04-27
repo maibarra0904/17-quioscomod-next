@@ -1,8 +1,17 @@
-import React from 'react'
+import AddProductForm from '@/components/products/AddProductForm'
+import ProductForm from '@/components/products/ProductForm'
+import Heading from '@/components/ui/Heading'
 
 const NewPage = () => {
   return (
-    <div>New page</div>
+    <>
+      <Heading>Nuevo Producto</Heading>
+
+      <AddProductForm>
+        <ProductForm />
+      </AddProductForm>
+
+    </>
   )
 }
 
