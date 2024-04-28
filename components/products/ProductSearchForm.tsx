@@ -15,7 +15,7 @@ const ProductSearchForm = () => {
 
         if(!result.success) {
             result.error.issues.forEach((issue) => {
-                console.log(issue)
+  
                 toast.error(issue.message)
             })
             return

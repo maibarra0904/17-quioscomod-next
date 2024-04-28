@@ -14,7 +14,6 @@ type ProductEditFormProps = {
 export default async function ProductForm({product}: ProductEditFormProps) {
 
     const categories = await getCategories()
-    console.log(categories, product?.categoryId)
 
     return (
         <>

@@ -24,7 +24,6 @@ const EditProductPage = async ({params} : {params: {id: string}}) => {
 
     const product = await getProductById(+params.id)
 
-    console.log(product)
 
   return (
     <>

@@ -25,8 +25,6 @@ async function searchProducts(searchTerm: string) {
 const SearchPage = async ({ searchParams }: { searchParams: { search: string } }) => {
 
   const products = await searchProducts(searchParams.search)
-  console.log(searchParams.search)
-  console.log(products)
 
   return (
     <>

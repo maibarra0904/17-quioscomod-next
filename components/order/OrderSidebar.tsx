@@ -13,7 +13,6 @@ const OrderSidebar = async () => {
 
     const categories = await getCategories()
 
-    console.log(categories.map(el => el))
 
   return (
     <aside className="md:w-72 md:h-screen bg-white">
