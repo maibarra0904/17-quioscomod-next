@@ -17,7 +17,7 @@ const OrdersPage = () => {
   })
 
 
-  if (isLoading) return 'Cargando...'
+if (isLoading) return <p>Cargando...</p>
 
   if (data) return (
     <>
