@@ -10,7 +10,6 @@ type OrderCardProps = {
 
 const OrderCard = ({order}: OrderCardProps) => {
 
-    console.log(order);
     
     const completarOrden = (id: number) => {
         
